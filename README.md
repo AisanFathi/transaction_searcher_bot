@@ -1,7 +1,7 @@
 # Transaction Searcher Bot
 Transaction Searcher Bot is  a Telegram chat bot that informs about high-value transactions that are being broadcast to the Bitcoin blockchain.
  
- ##Used library
+ ## Used library
  I used the library from :
  ```
  blockchain/api-v1-client-java
@@ -41,7 +41,7 @@ Transaction Searcher Bot is  a Telegram chat bot that informs about high-value t
         ...
     </dependencies>
  ```
- ##How does it work?
+ ## How does it work?
   The name of bot in the Telegram is
    ```Transaction_Searcher_Bot```
   The username of bot in the Telegram is 
