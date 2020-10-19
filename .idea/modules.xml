@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/blockexplorer.iml" filepath="$PROJECT_DIR$/blockexplorer.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/blockexplorer1.iml" filepath="$PROJECT_DIR$/src/blockexplorer1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/transaction_searcher_bot.iml" filepath="$PROJECT_DIR$/transaction_searcher_bot.iml" />
     </modules>
   </component>
 </project>
