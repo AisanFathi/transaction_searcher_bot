@@ -95,15 +95,15 @@ public class TelegramBot extends TelegramLongPollingBot {
 
     }
 
-
     public String getBotUsername() {
-        return "TelegrmBotHelloWorldBot";
+        return "TransactionSearcherBot";
     }
 
     public String getBotToken() {
-        return "1372120967:AAEAHpGb76f34TF-KtLrN4i1J1OvnXAGbNA";
+        return "1049190457:AAEVErg4kgwK3RiIrQJrx42v_P5hgn6fArc";
     }
 
+    //converting timestamp to date and utc time
     public String getHumanReadableTime(Long timeStamp){
         Date date = new Date(timeStamp*1000L);
         SimpleDateFormat jdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss z");
@@ -112,6 +112,7 @@ public class TelegramBot extends TelegramLongPollingBot {
         return java_date;
     }
 
+    //print transactions there are more than the specific amount which entered with command /start
     public void printNewCustomTransaction(long chat_id, long amountThreshold) throws InterruptedException, APIException, IOException {
 
         long maxTimePreviousIteration = 0;
@@ -121,18 +122,11 @@ public class TelegramBot extends TelegramLongPollingBot {
             ListIterator<Transaction> listIterator = unconfirmedTransactionsList.listIterator(unconfirmedTransactionsList.size());
             while (listIterator.hasPrevious()){
                 Transaction theTransaction = listIterator.previous();
-                if(theTransaction.getTime() > maxTimePreviousIteration) {
+                if(theTransaction.getTime() > maxTimePreviousIteration) {//preventing to repetition of printing transaction
                     maxTimePreviousIteration = theTransaction.getTime();
                     SendMessage message = new SendMessage()
                             .setChatId(chat_id)
-                            .setText(
-                                    "Time = " + getHumanReadableTime(theTransaction.getTime()) + "\n" +
-                                            "Size = " + theTransaction.getSize() + "\n" +
-                                            "Hash = " + theTransaction.getHash() + "\n" +
-                                            "Out puts = " + blockExplorerWrapper.getOutputsValue(theTransaction)
-
-
-                            );
+                            .setText("Transfer of amount " + blockExplorerWrapper.getTotalOutputsValue(theTransaction) + " satoshi happened with hash " + theTransaction.getHash() + " on " +getHumanReadableTime(theTransaction.getTime()));
                     try {
                         execute(message); // Sending our message object to user
                     } catch (TelegramApiException e1) {

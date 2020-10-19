@@ -373,11 +373,12 @@ public class BlockExplorerWrapper {
         return transactions;
     }
 
-    public ArrayList getOutputsValue(Transaction transaction){
-        ArrayList arrayList = new ArrayList<String>();
+    public long getTotalOutputsValue(Transaction transaction){
+        long totalValue = 0;
         for (Output output : transaction.getOutputs()){
-            arrayList.add(output.getValue());
+            totalValue = totalValue + output.getValue();
         }
-        return arrayList;
+        return totalValue;
     }
+
 }
