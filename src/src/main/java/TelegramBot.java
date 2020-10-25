@@ -100,7 +100,7 @@ public class TelegramBot extends TelegramLongPollingBot {
     }
 
     public String getBotToken() {
-        return "1049190457:AAEVErg4kgwK3RiIrQJrx42v_P5hgn6fArc";
+        return "";
     }
 
     //converting timestamp to date and utc time
