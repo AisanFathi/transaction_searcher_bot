@@ -46,11 +46,14 @@ Transaction Searcher Bot is  a Telegram chat bot that informs about high-value t
    ```Transaction_Searcher_Bot```
   The username of bot in the Telegram is 
   ```@TransactionSearcherBot```
-  To get information about transactions with greater value of the determined threshold that are being broadcast to the Bitcoin Blockchain
+  To get information about transactions with greater value of the determined threshold that are being broadcast to the Bitcoin Blockchain.
+  
   You should enter the command ```/start (amount of the threshold)```
-  after entering the command, you can see ***the hash of the transaction***, ***the total value of output*** and ***the date and time of the transaction***.
-  Information update evey 4000ms.
-  for stopping the stream you should enter the command ````/stop````.
+  
+  After entering the command, you can see ***the hash of the transaction***, ***the total value of output*** and ***the date and time of the transaction***.
+  
+  Information is updated evey 4000ms printing transactions that were broadcasted in the last 4000ms.
+  For stopping the stream you should enter the command ````/stop````.
   
   
   
